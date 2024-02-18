@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Male_Fashion Template">
+    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Male-Fashion | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <a href="https://icons8.com/icon/98957/user"></a>
+    <a href="https://icons8.com"></a>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+    <style>
+        .offer-price {
+    font-size: 24px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.offer-price span {
+    font-size: 16px; /* Adjust font size as needed */
+    color: #999; /* Adjust color as needed */
+    margin-left: 5px; /* Adjust margin as needed */
+}
+
+.discount-btn {
+    background-color: #ff5722; /* Adjust background color as needed */
+    color: white; /* Adjust text color as needed */
+    border: none;
+    padding: 3px 8px; /* Adjust padding as needed */
+    border-radius: 3px; /* Adjust border radius as needed */
+    margin-left: 5px; /* Adjust margin as needed */
+}
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
+            <a href="#"><img src="/img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
+            <div class="price">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header__top__left">
+                            <p>Free shipping, 30-day return or refund guarantee.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header__top__right">
+                            <div class="header__top__links">
+                                <a href="/login">login</a>
+                                <a href="/logout">Logout</a>
+                            </div>
+                            <div class="header__top__hover">
+                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <ul>
+                                    <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="/index"><img src="/img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="/index">Home</a></li>
+                            <li class="active"><a href="/shop">Shop</a></li>
+                            <li><a href="/shopping-cart">Cart</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="/checkout">Check Out</a></li>
+                                    <li><a href="/shop-details">Shop Details</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contacts</a></li>
+                                    <li><a href="/blog-details">Blog Details</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <!-- <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a> -->
+                        <a href="/userProfile"><img style="padding-left: 20px;"
+                                src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="" /></a>
+                        <a href="/wishlist"><img src="/img/icon/heart.png" alt=""></a>
+                        <a href="/wallet"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <!-- <div class="price">$0.00</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Shop Details Section Begin -->
+    <section class="shop-details">
+        <div class="product__details__pic">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="product__details__breadcrumb">
+                            <a href="./index.html">Home</a>
+                            <a href="./shop.html">Shop</a>
+                            <span>Product Details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- /------------------------- -->
+
+                    <!-- Include Medium Zoom CSS -->
+                    <link rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.css">
+
+                    <!-- Include Medium Zoom JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+
+
+                    <!-- ----------------------------------- -->
+
+                    <div class="col-lg-3 col-md-3">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                    <div class="product__thumb__pic set-bg"
+                                        data-setbg="/sharpImage/<%=products.image[0]%>">
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                    <div class="product__thumb__pic set-bg"
+                                        data-setbg="/sharpImage/<%=products.image[1]%>">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                    <div class="product__thumb__pic set-bg"
+                                        data-setbg="/sharpImage/<%=products.image[2]%>">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
+                                    <div class="product__thumb__pic set-bg"
+                                        data-setbg="/sharpImage/<%=products.image[3]%>">
+
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="col-lg-6 col-md-9">
+                        <div class="tab-content">
+
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[0]%>" alt=""
+                                        data-zoom="/sharpImage/<%=products.image[0]%>">
+                                </div>
+                            </div>
+                            <!-- Repeat for other tabs -->
+
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[1]%>" alt=""
+                                        data-zoom="/sharpImage/<%=products.image[1]%>">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[2]%>" alt=""
+                                        data-zoom="/sharpImage/<%=products.image[2]%>">
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-4" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[3]%>" alt=""
+                                        data-zoom="/sharpImage/<%=products.image[3]%>">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="product__details__content">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="product__details__text">
+                            <h4>
+                                <%=products.name%>
+                            </h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <span> - 5 Reviews</span>
+                            </div>
+
+                            <% if (products.offer) { %>
+                                <% const discountedPrice = products.price - (products.price * (products.offer.percentage / 100)); %>
+                                                    
+                                <h3 class="offer-price">₹ <%=Math.floor(discountedPrice)%> <span>₹ <%= products.price %> </span><button class="discount-btn"><%= products.offer.percentage %>% off</button></h3>
+                                <input type="hidden" id="newprice" value="<%=Math.floor(discountedPrice)%>">
+                            <% } else if (categ.offer) { %>
+                                <% const discountedPrice = products.price - (products.price * (categ.offer.percentage / 100)); %>
+                                                    
+                                <h3 class="offer-price">₹ <%=Math.floor(discountedPrice)%>  <span>₹ <%= products.price %> </span><button class="discount-btn"> <%= categ.offer.percentage %>% off</button></h3>
+                                <input type="hidden" id="newprice" value="<%=Math.floor(discountedPrice)%>">
+
+                            <% } else { %>
+                                <h3 class="offer-price">₹ <%= products.price %><button class="discount-btn">0% off</button></h3>
+                                <input type="hidden" id="newprice" value="<%= products.price %>">
+                            <% } %>
+
+
+                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
+                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
+                                with placket.</p>
+                            <div class="product__details__option">
+                                <% if(products.quantity <= 0) { %>
+                                    <button style="background-color: #862015; color: white; border: none; padding: 10px 20px; border-radius: 2px; cursor: not-allowed;">Out of stock</button>
+                                <% } else { %>
+                                    <button style="background-color: #2a8951; color: white; border: none; padding: 5px 10px; border-radius: 2px; cursor: pointer;">In stock</button>
+                               
+
+                            </div>
+                            <div class="product__details__cart__option">
+                                
+                                    <div class="quantity" onclick="quantityupdate('<%= products.quantity %>')">
+                                        <div class="pro-qty">
+                                            
+                                            <input id="quantityinput" name="qty" type="text" value="1">
+                                        </div>
+                                    </div>
+                                    <input name="productid"id="productid" type="hidden" value="<%= products._id %>">
+                                    <button class="primary-btn" onclick="return handleFormSubmission(event)">add to cart</button>
+                                
+                                <% } %>
+                            </div>
+                            <input type="hidden" id="user" value="<%= user %>">
+                            <div class="product__details__btns__option">
+                                <button style="background-color: #841989; color: white; border: none; padding: 5px 10px; border-radius: 2px; cursor: pointer;"  onclick="addToWishlist('<%=products._id%>')"><i class="fa fa-heart"></i> add to wishlist</button>
+                                <!-- <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> -->
+                            </div>
+                            <div class="product__details__last__option">
+                                <h5><span>Guaranteed Safe Checkout</span></h5>
+                                <img src="/img/shop-details/details-payment.png" alt="">
+                                <ul>
+                                    <li><span>SKU:</span> 3812912</li>
+                                    <li><span>Categories:</span> Clothes</li>
+                                    <li><span>Tag:</span> Clothes, Skin, Body</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__logo">
+                            <a href="#"><img src="/img/footer-logo.png" alt=""></a>
+                        </div>
+                        <p>The customer is at the heart of our unique business model, which includes design.</p>
+                        <a href="#"><img src="/img/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Clothing Store</a></li>
+                            <li><a href="#">Trending Shoes</a></li>
+                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">Sale</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                            <li><a href="#">Delivary</a></li>
+                            <li><a href="#">Return & Exchanges</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>NewLetter</h6>
+                        <div class="footer__newslatter">
+                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Your email">
+                                <button type="submit"><span class="icon_mail_alt"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p>Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>2020
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch">+</div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search End -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function addToWishlist(productid){
+            const userchek=document.getElementById(`user`).value;
+            
+            if(userchek){
+
+            Swal.fire({
+                title: 'Product Added to Wishlist!',
+                text: 'You have successfully added the product to your Wislist.',
+                icon: 'success',
+                showCancelButton: false,
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                // If the user clicks "OK", submit the form
+                if (result.isConfirmed) {
+
+                   fetch(`/addWishlist?productid=${productid}`,{
+                    method:'post'
+                   })
+                }
+            });
+            }else{
+                window.location.href = '/wishlist';
+            }
+
+            
+        }
+    </script>
+
+    <script>
+
+function showSweetAlert() {
+        return new Promise((resolve) => {  
+            Swal.fire({
+                icon: 'success',
+                title: 'Product Added to Cart!',
+                text: 'You have successfully added the product to your cart.',
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    resolve(true);
+                } else {
+                    resolve(false);
+                }
+            });
+        });
+    }
+        
+    async function handleFormSubmission(event) {
+        event.preventDefault(); 
+         
+        const newprice=document.getElementById('newprice').value;
+
+       // document.getElementById('Price').value=newprice;
+
+        //console.log(newprice);
+        
+        
+
+         const qtys=document.getElementById('quantityinput').value
+       // console.log(1111,newprice,2222,qtys);
+         const product=document.getElementById('productid').value
+
+         const userchek=document.getElementById(`user`).value;
+         if(userchek){
+            const confirmed = await showSweetAlert();
+        if (confirmed) {
+
+                    $.ajax({
+                        url:`/addcart`,
+                        method:'POST',
+                        data:{
+                            Price:newprice,
+                            qty:qtys,
+                            productid:product
+                        }
+                    })
+           
+           // event.target.submit();
+        }
+    }else{
+                window.location.href = '/wishlist';
+            }
+    }
+</script>
+
+
+    <script>
+        
+  
+        function quantityupdate( totalquantity) {
+            const quantityinput = document.getElementById("quantityinput");
+            const quantityValue = parseInt(quantityinput.value, 10);
+
+            console.log(111,quantityValue);
+            console.log(222,totalquantity);
+
+            if (isNaN(quantityValue) || quantityValue <= 0) {
+
+                quantityinput.value = "1";
+
+            } else if (quantityValue > totalquantity) {
+
+                quantityinput.value = totalquantity;
+            }
+
+        }
+
+
+
+
+    </script>
+
+    <!-- Js Plugins -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery.nicescroll.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/mixitup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Medium Zoom on all images with the 'data-zoom' attribute
+            const zoomImages = document.querySelectorAll('[data-zoom]');
+            const zoom = mediumZoom(zoomImages);
+        });
+    </script>
+</body>
+
+</html>
