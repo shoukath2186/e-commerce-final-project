@@ -6,9 +6,6 @@ const express = require('express');
 const app = express();
 const path = require('path')
 
-//-----------------rezer pay-------------------
-
-
 
 
 
@@ -32,13 +29,11 @@ app.use('/', adminrouter);
 
 
 
-//app.use(express.static(path.join(__dirname,"1adminpropertice")));
 
 
 const port = 9999;
 app.listen(port, () => {
     console.log(`surver port http://localhost:${port}`);
 })
-
 
 
