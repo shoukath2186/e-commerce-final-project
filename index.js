@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://shoukathotm777:shoukath1234@cluster0.u9cxxhu.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://shoukathotm777:shoukath1234@cluster0.u9cxxhu.mongodb.net/?retryWrites=true&w=majority").then(()=>{
+    console.log('connected to mongodb');
+})
 
 const express = require('express');
 const app = express();
