@@ -33,7 +33,7 @@ app.use('/', adminrouter);
 
 
 
-const port = 9999;
+const port = 3000;
 app.listen(port, () => {
     console.log(`surver port http://localhost:${port}`);
 })
