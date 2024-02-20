@@ -261,7 +261,7 @@
                                                 <tr>
                                                     <td><%= item.date.toLocaleDateString() %></td>
                                                     <td><%= new Date(item.date).toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' }) %></td>
-                                                    <td><%= item.amount %></td>
+                                                    <td> ₹ <%= item.amount %></td>
                                                     <% if (item.description === '+ credit') { %>
                                                         <td style="color: rgb(46, 151, 46);"><%= item.description %></td>
                                                     <% } else { %>
