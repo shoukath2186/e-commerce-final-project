@@ -439,6 +439,7 @@
 
                             <ul class="checkout__total__all">
                                 <li>Subtotal <span>₹<%= total %></span></li>
+                                <li>Discount <span id="discount">₹0</span></li>
                                 <li>Total <span id="totalval">₹<%= total %></span></li>
                             </ul>
 
@@ -505,11 +506,11 @@
 
     <script>
         function calculateTotal(code) {
-            console.log(2222, code);
+            //console.log(2222, code);
             const total = document.getElementById(`totalval`).innerText;
 
             const amount = total.replace('₹', ''); // Remove the currency symbol
-            console.log(amount);
+           // console.log(amount);
 
             document.getElementById('cashError').innerText = ''
 
@@ -528,9 +529,13 @@
 
                         var newData = response.data;
 
+                        const discount=amount-response.data
+
+                        document.getElementById('discount').innerText = `₹${discount}`
+
                         document.getElementById(`totalval`).innerText = `₹${newData}`
 
-                        console.log(newData);
+                        //console.log(newData);
                     } else if (response.status === 'date') {
 
                         document.getElementById('cashError').innerText = 'The coupon has expired.'
@@ -572,17 +577,14 @@
 
             //console.log(1111,couponDataString);
 
-            // Parse the JSON string into a JavaScript array of objects
+           
             var couponData = JSON.parse(couponDataString);
 
             //console.log(2222,couponData);
-            // Map the array of objects to extract couponName and couponCode properties
+            
             const displaydata = couponData.map((valu) => ({ name: valu.couponName, code: valu.couponCode, minimum: String(valu.minAmount) }));
 
 
-
-
-            // Format the display data into strings
             var availableCoupon = displaydata.map((item) => '<strong>Coupon Name:</strong> ' + item.name + '<br>' + '<strong>Coupon Code:</strong>' + item.code + '<br>' + '<strong>minimun Amount:</strong>' + item.minimum);
 
             var couponList = document.getElementById("couponList");
@@ -594,14 +596,14 @@
                 couponList.appendChild(hr);
 
                 var li = document.createElement("li");
-                li.innerHTML = coupon; // Set innerHTML to include line breaks
+                li.innerHTML = coupon; 
                 couponList.appendChild(li);
 
                 var br = document.createElement("br");
                 couponList.appendChild(br);
 
 
-                // Create the "Apply" button
+                
                 var button = document.createElement("button");
                 button.textContent = "Apply";
                 button.classList.add("apply-btn");
