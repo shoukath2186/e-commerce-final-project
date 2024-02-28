@@ -591,6 +591,7 @@ const verifybuyproduct = async (req, res) => {
         
             paymentids=randomString
             paymentmeterd='razerpay';
+            newstatus='pending' 
            
 
         

@@ -57,6 +57,8 @@ const verifyupdateStatus = async (req, res) => {
 
             if (orderData.paymentMethod == 'razerpay' || orderData.paymentMethod == 'wallet') {
 
+                if(orderData.status !=='pending'){
+
                 const userId = orderData.userId
 
                 const userData = await User.findById(userId);
@@ -65,13 +67,13 @@ const verifyupdateStatus = async (req, res) => {
 
                 const matchingItem = productPrice.items.filter(data => data._id == String(productnewid));
 
-                console.log(matchingItem);
+                //console.log(matchingItem);
 
                 const total = matchingItem[0].totalprice;
 
                 const newtotal = userData.wallet + total
 
-                console.log(1111,newtotal,2222,total);
+                //console.log(1111,newtotal,2222,total);
 
                 const history = [{
                     date: new Date(),
@@ -84,9 +86,11 @@ const verifyupdateStatus = async (req, res) => {
                     $push: { walletData: { $each: history } }
                 });
 
-
+            }
 
             }
+
+
             const orderDatas = await Order.findOne({ _id: orderId });
 
             orderDatas.items.forEach(async (item) => {
