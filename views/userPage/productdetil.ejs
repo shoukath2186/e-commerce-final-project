@@ -175,96 +175,56 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- /------------------------- -->
-
+        
                     <!-- Include Medium Zoom CSS -->
-                    <link rel="stylesheet"
-                        href="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.css">
-
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.css">
+        
                     <!-- Include Medium Zoom JS -->
                     <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
-
-
-
-                    <!-- ----------------------------------- -->
-
+        
+                    <!-- Thumbnail Navigation -->
                     <div class="col-lg-3 col-md-3">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg"
-                                        data-setbg="/sharpImage/<%=products.image[0]%>">
-
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg"
-                                        data-setbg="/sharpImage/<%=products.image[1]%>">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg"
-                                        data-setbg="/sharpImage/<%=products.image[2]%>">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg"
-                                        data-setbg="/sharpImage/<%=products.image[3]%>">
-
-                                    </div>
-                                </a>
-                            </li>
+                            <% products.image.forEach((image, index) => { %>
+                                <li class="nav-item">
+                                    <a class="nav-link <%= index === 0 ? 'active' : '' %>" data-toggle="tab" href="#tabs-<%= index + 1 %>" role="tab">
+                                        <div class="product__thumb__pic"
+                                            style="background-image: url('/sharpImage/<%= image %>'); background-size: cover; background-position: center; width: 80px; height: 80px; border: 1px solid #ddd; border-radius: 5px;">
+                                        </div>
+                                    </a>
+                                </li>
+                            <% }) %>
                         </ul>
                     </div>
-
-
-
-
+        
+                    <!-- Main Image Display -->
                     <div class="col-lg-6 col-md-9">
                         <div class="tab-content">
-
-                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[0]%>" alt=""
-                                        data-zoom="/sharpImage/<%=products.image[0]%>">
+                            <% products.image.forEach((image, index) => { %>
+                                <div class="tab-pane <%= index === 0 ? 'active' : '' %>" id="tabs-<%= index + 1 %>" role="tabpanel">
+                                    <div class="product__details__pic__item">
+                                        <img class="zoomable-image" style="width: 100%; border: 1px solid #ddd; border-radius: 5px;" 
+                                            src="/sharpImage/<%= image %>" alt="Product Image">
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Repeat for other tabs -->
-
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[1]%>" alt=""
-                                        data-zoom="/sharpImage/<%=products.image[1]%>">
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[2]%>" alt=""
-                                        data-zoom="/sharpImage/<%=products.image[2]%>">
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-4" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img style="width: 350px;" src="/sharpImage/<%=products.image[3]%>" alt=""
-                                        data-zoom="/sharpImage/<%=products.image[3]%>">
-
-                                </div>
-                            </div>
+                            <% }) %>
                         </div>
                     </div>
-
-
-
-
+        
                 </div>
             </div>
         </div>
+        
+        <script>
+            // Initialize Medium Zoom on all images with the `zoomable-image` class
+            document.addEventListener("DOMContentLoaded", function() {
+                mediumZoom('.zoomable-image', {
+                    margin: 20, // Space around the zoomed image
+                    background: 'rgba(0, 0, 0, 0.8)', // Zoom background color
+                });
+            });
+        </script>
+        
         <div class="product__details__content">
             <div class="container">
                 <div class="row d-flex justify-content-center">

@@ -450,8 +450,10 @@ const addAddressverify = async (req, res) => {
 
             const total = cartdata.items[0].totel_price;
 
+            const coupondata=await Coupon.find({}).sort({_id:-1});
+
             //console.log('cart data;',cartdata,'user data;',userdata,'totel;',total);
-            res.render('checkout', { userdata: userdata, cart: cartdata, total: total });
+            res.render('checkout', { userdata: userdata, cart: cartdata, total: total,coupon:coupondata });
         } else {
             res.redirect('/checkout');
         }

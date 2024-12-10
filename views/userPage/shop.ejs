@@ -262,114 +262,90 @@
 
 
 
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="col-lg-4 col-md-6 col-sm-6 " style="padding-top: 30px;">
                                         <div class="product__item">
-                                            <div class="product__item__pic set-bg"
-                                                data-setbg="sharpImage/<%=products[i].image[0]%>">
-
+                                            <div class="product__item__pic">
+                                                <div class="product__image-container">
+                                                    <img 
+                                                        src="sharpImage/<%= products[i].image[0] %>" 
+                                                        alt="<%= products[i].name %>" 
+                                                        class="product__image"
+                                                    >
+                                                </div>
+                                                
                                                 <ul class="product__hover">
-                                                    <li onclick="addToWishlist('<%=products[i]._id%>')"><img src="img/icon/heart.png" alt=""></li>
-                                                    <li><a href="#"><img src="img/icon/compare.png" alt="">
-                                                            <span>Compare</span></a>
+                                                    <li onclick="addToWishlist('<%=products[i]._id%>')">
+                                                        <img src="img/icon/heart.png" alt="Wishlist">
                                                     </li>
-                                                    <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-
+                                                    <li>
+                                                        <a href="/showdetails/<%=products[i]._id%>"><img src="img/icon/compare.png" alt="Compare">
+                                                            <span>Compare</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><img src="img/icon/search.png" alt="Search"></a>
+                                                    </li>
                                                 </ul>
-
                                             </div>
-                                            <br>
-
-                                            <a href="/showdetails/<%=products[i]._id%>">
-                                                <h5 style="color: rgb(174, 36, 36);">Product Details</h5>
-                                            </a>
-
+                                    
                                             <div class="product__item__text">
-                                                <h5>
-                                                    <%=products[i].name%>
-                                                </h5>
-                                                <form id="addToCartForm_<%=products[i]._id%>" action="/addcart/<%=products[i]._id%>" method="post">
-                                                    <input type="hidden" name="price" id="offerPrice-<%=products[i]._id%>" value="">
-                                                    <button class="add-cart" type="button" onclick="addToCart('<%=products[i]._id%>')" style="background-color: #2c5c22; color: #fff;  border: none; border-radius: 5px; cursor: pointer;">+ Add To Cart</button>
-                                                    
-                                                </form>
-                                                <% if (products[i].offer) { %>
-
-                                                    <% const discountedPrice = products[i].price - (products[i].price * (products[i].offer.percentage / 100)); %>
-                                                    <h5 class="offer-price">₹ <%= Math.floor(discountedPrice) %></h5>
-                                                   
-                                                    <input type="hidden" id="newprice-<%= products[i]._id %>" value="<%= Math.floor(discountedPrice) %>">
-
-                                                    <span class="original-price">₹ <%= products[i].price %></span>
-                                                    <button class="discount"> <%= products[i].offer.percentage %>% off</button>
-                                                <% } else if (products[i].category.offer) { %>
-                                                    <%
-                                                    let maxPercentag = 0;
-                                                    let maximumOffer = null;
+                                                <h5><%=products[i].name%></h5>
                                                 
-                                                    offerdata.forEach((data) => {
-                                                        if (data._id.toString() === products[i].category.offer.toString() && data.percentage > maxPercentag) {
-                                                            maxPercentag = data.percentage;
-                                                            maximumOffer = data;
-                                                        }
-                                                    });
-                                                
-                                                    if (maximumOffer) {
-                                                %>
-                                                <% const discountedPrice = products[i].price - (products[i].price * (maximumOffer.percentage / 100)); %>
-                                                    <h5 class="offer-price">₹ <%= Math.floor(discountedPrice) %></h5>
-                                                    <input type="hidden" id="newprice-<%= products[i]._id %>" value="<%= Math.floor(discountedPrice) %>">
-                                                <%
-                                                    }
-                                                %>
+                                                <div class="price-container">
+                                                    <% if (products[i].offer) { %>
+                                                        <% const discountedPrice = products[i].price - (products[i].price * (products[i].offer.percentage / 100)); %>
+                                                        <h5 class="offer-price">₹ <%= Math.floor(discountedPrice) %></h5>
+                                                        <span class="original-price">₹ <%= products[i].price %></span>
+                                                        <button class="discount"> <%= products[i].offer.percentage %>% off</button>
+                                                    <% } else if (products[i].category.offer) { %>
+                                                        <%
+                                                        let maxPercentage = 0;
+                                                        let maxOffer = null;
                                                     
+                                                        offerdata.forEach((datas) => {
+                                                            if (datas._id.toString() === products[i].category.offer.toString() && datas.percentage > maxPercentage) {
+                                                                maxPercentage = datas.percentage;
+                                                                maxOffer = datas;
+                                                            }
+                                                        });
                                                     
-                                                    
-                                                    
-                                                    <span class="original-price">₹ <%= products[i].price %></span>
-
-
-                                                    <%
-                                                    let maxPercentage = 0;
-                                                    let maxOffer = null;
-                                                
-                                                    offerdata.forEach((datas) => {
-                                                        if (datas._id.toString() === products[i].category.offer.toString() && datas.percentage > maxPercentage) {
-                                                            maxPercentage = datas.percentage;
-                                                            maxOffer = datas;
-                                                        }
-                                                    });
-                                                
-                                                    if (maxOffer) {
-                                                %>
-                                                    <button class="discount"> <%= maxOffer.percentage %>% off</button>
-                                                <%
-                                                    }
-                                                %>
-
-
-                                                <% } else { %>
-                                                    <h5 class="offer-price">₹ <%= products[i].price %></h5>
-                                                    <span class="original-price"></span>
-                                                    <button class="discount"> 0% off</button>
-                                                    <input type="hidden" id="newprice-<%= products[i]._id %>" value="<%= products[i].price %>">
-
-                                                <% } %>  
-
-                                                
-
-
-                                                 
-                                                <div class="product__color__select">
-                                                    <% if(products[i].quantity <= 0) { %>
-                                                        <button style="background-color: #862015; color: white; border: none; border-radius: 5px; cursor: not-allowed;">Out of stock</button>
+                                                        if (maxOffer) {
+                                                            const discountedPrice = products[i].price - (products[i].price * (maxOffer.percentage / 100));
+                                                        %>
+                                                            <h5 class="offer-price">₹ <%= Math.floor(discountedPrice) %></h5>
+                                                            <span class="original-price">₹ <%= products[i].price %></span>
+                                                            <button class="discount"> <%= maxOffer.percentage %>% off</button>
+                                                        <% } else { %>
+                                                            <h5 class="offer-price">₹ <%= products[i].price %></h5>
+                                                        <% } %>
                                                     <% } else { %>
-                                                        <button style="background-color: #2a8951; color: white; border: none; border-radius: 5px; cursor: pointer;">In stock</button>
+                                                        <h5 class="offer-price">₹ <%= products[i].price %></h5>
                                                     <% } %>
                                                 </div>
-                                                <input type="hidden" id="qty-<%=products[i]._id%>" value="<%=products[i].quantity%>">
-
-
-                                               
+                                    
+                                                <div class="product-actions">
+                                                    <form id="addToCartForm_<%=products[i]._id%>" action="/addcart/<%=products[i]._id%>" method="post">
+                                                        <input type="hidden" name="price" id="offerPrice-<%=products[i]._id%>" value="">
+                                                        <button class="add-cart" type="button" onclick="addToCart('<%=products[i]._id%>')">
+                                                            + Add To Cart
+                                                        </button>
+                                                    </form>
+                                    
+                                                    <div class="stock-status <%= products[i].quantity <= 0 ? 'out-of-stock' : 'in-stock' %>">
+                                                        <%= products[i].quantity <= 0 ? 'Out of stock' : 'In stock' %>
+                                                    </div>
+                                    
+                                                    <input type="hidden" id="qty-<%=products[i]._id%>" value="<%=products[i].quantity%>">
+                                                    <input type="hidden" id="newprice-<%= products[i]._id %>" 
+                                                        value="<%= 
+                                                            products[i].offer ? 
+                                                            Math.floor(products[i].price - (products[i].price * (products[i].offer.percentage / 100))) : 
+                                                            (products[i].category.offer ? 
+                                                                Math.floor(products[i].price - (products[i].price * (maxOffer.percentage / 100))) : 
+                                                                products[i].price) 
+                                                        %>"
+                                                    >
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -628,5 +604,121 @@
         }
     </script> -->
 </body>
+<style>
+    .product__item {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Full height of the column */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds subtle depth */
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
 
+    .product__item:hover {
+        transform: translateY(-5px);
+    }
+
+    .product__image-container {
+        width: 100%; 
+        height: 250px; /* Consistent height */
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        overflow: hidden;
+        background-color: #f8f9fa; /* Light background for image container */
+    }
+
+    .product__image-container img {
+        max-width: 100%; 
+        max-height: 100%; 
+        object-fit: contain;
+        object-position: center;
+        transition: transform 0.3s ease;
+    }
+
+    .product__item__text {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+    }
+
+    .product__item__text h5 {
+        margin-bottom: 10px;
+        text-align: center;
+        color: #333;
+    }
+
+    .price-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .offer-price {
+        color: #e44d26;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .original-price {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 10px;
+    }
+
+    .discount {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
+
+    .product-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .add-cart {
+        width: 100%;
+        padding: 8px 15px;
+        background-color: #2c5c22;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-cart:hover {
+        background-color: #3a7b2f;
+    }
+
+    .stock-status {
+        width: 100%;
+        padding: 8px 15px;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .in-stock {
+        background-color: #2a8951;
+        color: white;
+    }
+
+    .out-of-stock {
+        background-color: #862015;
+        color: white;
+        cursor: not-allowed;
+    }
+</style>
 </html>
